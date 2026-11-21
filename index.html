@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="護理新進人員帶教需求互動自評小測驗">
+<title>新手護理師的適應任務</title>
+<style>
+:root{--ink:#193943;--muted:#5f7378;--teal:#157a78;--mint:#e7f4f0;--cream:#fbf8f0;--gold:#f4c968;--line:#d8e5e2;--white:#fff;--shadow:0 14px 40px #19394312}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,"Microsoft JhengHei",sans-serif;line-height:1.65}button{font:inherit;cursor:pointer}.wrap{max-width:850px;margin:auto;padding:24px 18px 60px}.top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.88rem;margin-bottom:16px}.brand{font-weight:800;color:var(--teal)}.hero,.panel,.result{background:var(--white);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}.hero{padding:clamp(24px,6vw,54px);background:linear-gradient(125deg,#e8f4ef,#fff8e7);position:relative;overflow:hidden}.hero:after{content:'✚';position:absolute;font-size:155px;color:#157a780d;right:30px;top:10px;transform:rotate(12deg)}.eyebrow{color:var(--teal);font-weight:800;letter-spacing:.08em;font-size:.82rem}.hero h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.2;margin:.35em 0}.hero p{max-width:610px;color:#456066}.notice{border-left:4px solid var(--gold);background:#fffdf6;padding:12px 15px;border-radius:8px;font-weight:700;max-width:690px}.btn{border:0;border-radius:14px;padding:13px 21px;background:var(--teal);color:white;font-weight:800;box-shadow:0 5px 0 #0b5c5b;transition:.15s}.btn:hover{transform:translateY(-1px)}.btn.secondary{background:white;color:var(--teal);border:1px solid var(--line);box-shadow:none}.start{margin-top:20px}.panel{padding:clamp(20px,5vw,38px);margin-top:20px}.hidden{display:none!important}.progressline{height:9px;background:#e7eeec;border-radius:20px;overflow:hidden;margin:10px 0 7px}.progressline span{display:block;height:100%;width:0;background:linear-gradient(90deg,#53aaa0,#157a78);transition:width .25s}.progressmeta{display:flex;justify-content:space-between;color:var(--muted);font-size:.88rem}.mission{color:var(--teal);font-weight:800}.question{font-size:1.28rem;font-weight:750;line-height:1.5;margin:22px 0}.answers{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.answer{border:1px solid var(--line);background:#fff;border-radius:15px;padding:13px 6px;min-height:85px;color:var(--ink);font-weight:700}.answer span{display:block;color:var(--teal);font-size:1.4rem;font-weight:900}.answer:hover,.answer.selected{border-color:var(--teal);background:var(--mint);box-shadow:inset 0 0 0 1px var(--teal)}.nav{display:flex;justify-content:space-between;margin-top:25px}.scale{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);margin:8px 3px}.result{padding:clamp(22px,5vw,42px);margin-top:20px}.result h2{font-size:2rem;margin:.2em 0}.badge{display:inline-block;background:#fff3cc;padding:6px 12px;border-radius:99px;color:#725713;font-weight:800}.scoregrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0}.scorecard{border:1px solid var(--line);border-radius:15px;padding:15px}.scorecard strong{display:block}.bar{height:8px;background:#e8efed;border-radius:9px;margin:9px 0}.bar i{display:block;height:100%;background:var(--teal);border-radius:9px}.tip{background:var(--mint);padding:14px 16px;border-radius:14px;margin:10px 0}.reflection{background:#fff8e7;padding:16px;border-radius:15px}.footer{color:var(--muted);font-size:.82rem;margin:18px 4px}.confetti{font-size:2.6rem} @media(max-width:560px){.answers{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.answer{font-size:.75rem;padding:10px 2px;min-height:78px}.answer span{font-size:1.2rem}.scoregrid{grid-template-columns:1fr}.top{font-size:.78rem}}
+@media print{body{background:white}.top,.hero,.panel button,.footer .print{display:none!important}.result{box-shadow:none;border:0}.wrap{max-width:none;padding:0}}
+</style></head>
+<body><main class="wrap">
+<div class="top"><span class="brand">✚ 新進護理師適應任務</span><span>約 5 分鐘・無標準答案</span></div>
+<section class="hero" id="intro"><div class="eyebrow">你的帶教需求探索</div><h1>新手護理師的<br>適應任務</h1><p>每個人熟悉新病房的方式都不同。用幾分鐘看看自己目前的感受，完成後會得到一份可以和帶教老師討論的學習支持提示。</p><div class="notice">本測驗用於了解學習需求與安排帶教，不作為能力、人格或任用評分。</div><button class="btn start" id="start">開始任務　→</button></section>
+<section class="panel hidden" id="quiz"><div class="mission" id="mission"></div><div class="progressmeta"><span id="step"></span><span id="pct"></span></div><div class="progressline"><span id="progress"></span></div><div class="question" id="question"></div><div class="answers" id="answers"></div><div class="scale"><span>非常不符合</span><span>普通／不確定</span><span>非常符合</span></div><div class="nav"><button class="btn secondary" id="back">← 上一題</button><button class="btn" id="next">下一題 →</button></div></section>
+<section class="result hidden" id="result"></section>
+<div class="footer">作答內容只留在目前裝置的瀏覽器頁面，不會傳送至伺服器。這是一份帶教討論工具，不是心理測驗或臨床能力評量。<span class="print">完成後可列印或儲存結果，與帶教老師討論。</span></div>
+</main>
+<script>
+const questions=[
+['抗壓與調適','面對突發狀況或緊急任務時，我能保持冷靜並按部就班處理。'],
+['抗壓與調適','當工作進度落後或同時有多項任務交辦時，我不會輕易感到慌亂。'],
+['抗壓與調適','受到資深人員指正或面對家屬質疑時，我能先吸收建議，不過度陷入自我懷疑。'],
+['抗壓與調適','下班後，我能適度轉換心情，不把工作上的負面情緒帶入日常生活中。'],
+['抗壓與調適','遇到挫折或犯錯時，我傾向思考下次如何改進，而非一直懊惱。'],
+['溝通與合作','當我對醫囑、交班內容或操作步驟有疑問時，我敢於主動向學長姐或醫師提問。'],
+['溝通與合作','發現自己可能無法如期完成手邊工作時，我會提早向團隊發出求援訊號。'],
+['溝通與合作','與不同個性或背景的人溝通時，我能保持耐心並傾聽對方需求。'],
+['溝通與合作','在團隊中，當別人需要協助且我手邊有空檔時，我樂意主動伸出援手。'],
+['溝通與合作','我習慣用有條理、重點式的方式向他人回報事情經過。'],
+['細心與責任','在執行重要步驟前，我習慣核對細節，確保沒有遺漏（例如姓名、時間、劑量）。'],
+['細心與責任','即使在時間緊迫時，我仍會遵守標準作業流程，不隨意省略步驟。'],
+['細心與責任','對於自己經手的紀錄或交辦事項，我會確認落實後才放心。'],
+['細心與責任','當發現環境或流程中有潛在安全疑慮時，我會主動提出或設法改善。'],
+['學習與適應','面對不熟悉的儀器、系統或臨床技術，我會主動尋找資料或請教他人來學會。'],
+['學習與適應','當臨床實際做法與學校所學不同時，我能保持開放態度去理解並調整。'],
+['學習與適應','面對高強度學習期，我會規劃時間並複習重點。'],
+['帶教偏好','我喜歡有明確規範、步驟與每日學習目標，這會讓我在新環境中更有安全感。'],
+['帶教偏好','我比較容易透過示範後實際練習來學習。'],
+['帶教偏好','我需要先了解整體原理，再學習操作步驟。'],
+['帶教偏好','一次接收太多資訊時，我會感到吃力；分段說明對我較有幫助。']
+];
+const groups={'抗壓與調適':[0,1,2,3,4],'溝通與合作':[5,6,7,8,9],'細心與責任':[10,11,12,13],'學習與適應':[14,15,16],'帶教偏好':[17,18,19,20]};
+let answers=Array(questions.length).fill(null),idx=0;
+const $=id=>document.getElementById(id);const intro=$('intro'),quiz=$('quiz'),result=$('result');
+$('start').onclick=()=>{intro.classList.add('hidden');quiz.classList.remove('hidden');render()};
+function render(){let [cat,q]=questions[idx];$('mission').textContent='任務 '+(Object.keys(groups).indexOf(cat)+1)+'｜'+cat;$('step').textContent=`第 ${idx+1} 題／${questions.length} 題`;$('pct').textContent=`${Math.round(idx/questions.length*100)}%`; $('progress').style.width=`${idx/questions.length*100}%`;$('question').textContent=q;
+$('answers').innerHTML='';['非常不符合','不太符合','普通／不確定','還算符合','非常符合'].forEach((label,i)=>{let b=document.createElement('button');b.className='answer'+(answers[idx]===i+1?' selected':'');b.setAttribute('aria-label',`${i+1}分，${label}`);b.innerHTML=`<span>${i+1}</span>${label}`;b.onclick=()=>{answers[idx]=i+1;render()};$('answers').appendChild(b)});
+$('back').disabled=idx===0;$('back').style.opacity=idx===0?'.45':'1';$('next').textContent=idx===questions.length-1?'完成任務 ✨':'下一題 →';$('next').disabled=answers[idx]===null;$('next').style.opacity=answers[idx]===null?'.5':'1'}
+$('back').onclick=()=>{if(idx>0){idx--;render()}};$('next').onclick=()=>{if(answers[idx]===null)return;if(idx<questions.length-1){idx++;render()}else showResult()};
+const recommendations={'抗壓與調適':'可以和老師約定每班分段確認工作優先順序，逐步增加照護任務；遇到忙亂時先說出目前狀況並及早求援。','溝通與合作':'可約定固定的提問時段與求援句型，老師也能主動確認疑問，讓提問成為日常學習的一部分。','細心與責任':'帶教時可一起練習關鍵核對點與標準流程，並在安全前提下逐步熟悉速度與工作節奏。','學習與適應':'可把學習目標拆成每班少數幾項，搭配示範、練習和短回顧，逐步連結學校所學與病房實務。'};
+function showResult(){quiz.classList.add('hidden');result.classList.remove('hidden');$('progress').style.width='100%';let cards='';Object.entries(groups).slice(0,4).forEach(([name,ids])=>{let avg=ids.reduce((s,i)=>s+answers[i],0)/ids.length;cards+=`<div class="scorecard"><strong>${name}</strong><span>自評平均 ${avg.toFixed(1)}／5</span><div class="bar"><i style="width:${avg*20}%"></i></div><small>分數呈現目前感受，請依題目內容討論需要的支持。</small></div>`});let prefs=groups['帶教偏好'].map(i=>({q:questions[i][1],v:answers[i]})).sort((a,b)=>b.v-a.v).slice(0,2).map(x=>`<li>${x.q}</li>`).join('');let tips=Object.entries(groups).slice(0,4).map(([n,ids])=>{let low=ids.filter(i=>answers[i]<=2);return low.length?`<div class="tip"><b>${n}｜可以討論</b><br>${recommendations[n]}</div>`:''}).join('');if(!tips)tips='<div class="tip"><b>目前的自評</b><br>你在各面向的自我感受大致正向。仍可和帶教老師確認哪些情境需要陪同練習，以及遇到不確定時如何求援。</div>';
+result.innerHTML=`<div class="confetti">🎉</div><span class="badge">任務完成</span><h2>你的帶教需求摘要</h2><p>這不是能力排名，而是開啟對話的起點。分數較低的題目可用來找出更合適的支持方式。</p><div class="scoregrid">${cards}</div><h3>你偏好的學習方式</h3><ul>${prefs}</ul><h3>可以和帶教老師討論</h3>${tips}<div class="reflection"><b>帶教會談小抄</b><p>我目前最想先學會：________________________</p><p>我希望老師用這種方式協助我：________________</p><p>下次一起確認進度的時間：____________________</p></div><p class="notice">本表用於了解學習需求與安排帶教，不作為能力、人格或任用評分。臨床技能與病人安全能力仍依單位訓練流程實際評量。</p><button class="btn" onclick="window.print()">列印／儲存摘要</button> <button class="btn secondary" onclick="location.reload()">重新作答</button>`;window.scrollTo({top:0,behavior:'smooth'})}
+</script></body></html>
